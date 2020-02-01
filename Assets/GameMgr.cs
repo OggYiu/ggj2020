@@ -15,6 +15,7 @@ public class GameMgr : MonoBehaviour
     public Text text_healthyRate;
     public Text text_deadRate;
     public Text text_virusData;
+    
     public float infected_count = 0;
     public float dead_count = 0;
     public float healthy_count = 0;
@@ -38,7 +39,12 @@ public class GameMgr : MonoBehaviour
         DisplaySpeechText("hello, how are you? I am good!");
         DisplayPotStatus("Pot Ready!");
         DisplayGameStatus("Game Start!");
-        DisplayVirusData("Game Start!");
+
+        string virusName = "Virus_name";
+        string[] symptoms = { "Matt", "Joanne", "Robert" };
+        DisplayVirusData(virusName, symptoms);
+
+        SetTextHealthy(100);
     }
 
     // Update is called once per frame
@@ -158,8 +164,14 @@ public class GameMgr : MonoBehaviour
         gameStatusDisplayer.Display(status);
     }
 
-    public void DisplayVirusData(string json)
+    public void DisplayVirusData(string name, string[] symptoms)
     {
-        text_virusData.text = "";
+        string text = "<color=#ffffff>" + name + "</color>\n";
+        foreach(string symptom in symptoms)
+        {
+            text += "<color=#aaaaff>" + symptom  + "</color>\n";
+        }
+
+        text_virusData.text = text;
     }
 }
