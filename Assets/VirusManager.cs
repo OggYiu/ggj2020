@@ -46,28 +46,47 @@ public class VirusManager : MonoBehaviour
         {
             if (population > 0)
             {
+                long orig_popultation = population;
                 long orig_infected_popultation = infected_population;
+                long orig_killed_population = killed_population;
+
                 infected_population = (long)((float)infected_population * current_virus.infection_rate);
                 if (infected_population >= population)
                 {
                     infected_population = population;
                 }
 
-                long orig_killed_population = killed_population;
-                killed_population = (long)((float)infected_population * current_virus.dead_rate);
-                infected_population = infected_population - killed_population + orig_killed_population;
-
-                population -= killed_population;
-                if (population - killed_population <= 0)
+                population = population - infected_population + orig_infected_popultation;
+                if (population < 0)
                 {
                     population = 0;
+                }
+
+                killed_population += (long)((float)infected_population * current_virus.dead_rate);
+                infected_population = infected_population - killed_population + orig_killed_population;
+
+                if (infected_population < 0)
+                {
+                    infected_population = 0;
+                }
+
+                //Cure
+                long cure_population = (long)((float)infected_population * current_virus.cure_rate);
+                if (cure_population > 0)
+                {
+                    population += cure_population;
+                    infected_population -= cure_population;
+
+                    Debug.Log("cure_population: " + cure_population);
                 }
 
                 gameMgr.SetTextInfected((long)infected_population);
                 gameMgr.SetTextHealthy((long)population);
                 gameMgr.SetTextDead((long)killed_population);
 
-                Debug.Log("Population: " + population);
+                gameMgr.SetInfectedRate(infected_population - orig_infected_popultation);
+                gameMgr.SetHealthyRate(population - orig_popultation);
+                gameMgr.SetDeadRate(killed_population - orig_killed_population);
             }
             else
             {
@@ -75,5 +94,10 @@ public class VirusManager : MonoBehaviour
                 Debug.Log("GAME OVER");
             }
         }
+    }
+
+    public bool CURE(string[] items)
+    {
+        return current_virus.CURE(items);
     }
 }

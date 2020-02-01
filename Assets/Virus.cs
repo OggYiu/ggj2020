@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Virus : MonoBehaviour
 {
+    public string virus_name = "";
     public long init_infection = 100;
     public float infection_rate = 2.5f;
     public float dead_rate = 0.1f;
-    public string[] cure;
+    public float cure_rate = 0.1f;
+    public string[] cures;
     public string[] symptoms;
 
     // Start is called before the first frame update
@@ -20,5 +22,34 @@ public class Virus : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public bool CURE(string[] items)
+    {
+        int cure_count = cures.Length;
+        int correct_count = 0;
+        foreach (string item in items)
+        {
+            foreach (string cure in cures)
+            {
+                if (cure == item)
+                {
+                    correct_count++;
+                }
+            }
+        }
+
+        if (correct_count == cure_count)
+        {
+            infection_rate = 1;
+            cure_rate = 0.5f;
+            return true;
+        }
+        else if(correct_count > 0)
+        {
+            
+        }
+
+        return false;
     }
 }
