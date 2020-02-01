@@ -47,7 +47,11 @@ public class Virus : MonoBehaviour
         }
         else if(correct_count > 0)
         {
-            
+            infection_rate = infection_rate * (correct_count / cure_count);
+            dead_rate = dead_rate * (correct_count / cure_count);
+
+            Debug.Log("infection_rate: " + infection_rate);
+            Debug.Log("dead_rate: " + dead_rate);
         }
 
         return false;
