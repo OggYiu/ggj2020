@@ -5,6 +5,8 @@ using UnityEngine.Assertions;
 
 public class GameMgr : MonoBehaviour
 {
+    public ItemObj[] itemObjs;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +23,20 @@ public class GameMgr : MonoBehaviour
     {
         Assert.IsTrue(item.id.Length > 0, "Item needs an id");
         Debug.Log("OnItemClicked: " + item.id);
+
+        ItemObj targetItemObj = null;
+        foreach(ItemObj itemObj in itemObjs)
+        {
+            if(itemObj.GetComponent<Item>().id == item.id)
+            {
+                targetItemObj = itemObj;
+                break;
+            }
+        }
+
+        if(targetItemObj != null)
+        {
+
+        }
     }
 }
