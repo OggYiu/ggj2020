@@ -14,6 +14,7 @@ public class GameMgr : MonoBehaviour
     public Text text_infectedRate;
     public Text text_healthyRate;
     public Text text_deadRate;
+    public Text text_virusData;
     public float infected_count = 0;
     public float dead_count = 0;
     public float healthy_count = 0;
@@ -37,19 +38,20 @@ public class GameMgr : MonoBehaviour
         DisplaySpeechText("hello, how are you? I am good!");
         DisplayPotStatus("Pot Ready!");
         DisplayGameStatus("Game Start!");
+        DisplayVirusData("Game Start!");
     }
 
     // Update is called once per frame
     void Update()
     {
         // test
-        infected_count += Time.deltaTime * infected_rate;
-        dead_count += Time.deltaTime * dead_rate;
-        healthy_count += Time.deltaTime * healthy_rate;
+        //infected_count += Time.deltaTime * infected_rate;
+        //dead_count += Time.deltaTime * dead_rate;
+        //healthy_count += Time.deltaTime * healthy_rate;
 
-        SetTextInfected((int)infected_count);
-        SetTextHealthy((int)healthy_count);
-        SetTextDead((int)dead_count);
+        //SetTextInfected((int)infected_count);
+        //SetTextHealthy((int)healthy_count);
+        //SetTextDead((int)dead_count);
     }
 
     public void OnItemClicked(Item item)
@@ -154,5 +156,10 @@ public class GameMgr : MonoBehaviour
     public void DisplayGameStatus(string status)
     {
         gameStatusDisplayer.Display(status);
+    }
+
+    public void DisplayVirusData(string json)
+    {
+        text_virusData.text = "";
     }
 }
