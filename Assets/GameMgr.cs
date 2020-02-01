@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class GameMgr : MonoBehaviour
 {
+    public Virus[] viruses;
+    public Virus CurrentVirus;
+
     public Transform ItemObjsParent;
     public ItemObj[] itemObjs;
     public Text text_infected;
@@ -30,6 +33,7 @@ public class GameMgr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CurrentVirus = viruses[0];
         speedTextDisplayer = FindObjectOfType<SpeedTextDisplayer>();
 
         SetInfectedRate(3);
@@ -44,7 +48,7 @@ public class GameMgr : MonoBehaviour
         string[] symptoms = { "Matt", "Joanne", "Robert" };
         DisplayVirusData(virusName, symptoms);
 
-        SetTextHealthy(100);
+        //SetTextHealthy(100);
     }
 
     // Update is called once per frame
@@ -81,37 +85,41 @@ public class GameMgr : MonoBehaviour
         float minY = 6.2f;
         obj.transform.parent = ItemObjsParent;
         obj.transform.position = new Vector3(Random.Range(minX, maxX), minY);
+
+        //testing
+        string[] items = { "Honey", "Peppermint"};
+        CurrentVirus.CURE(items);
     }
 
     public void SetInfectedCount(float count)
     {
         infected_count = count;
-        SetTextInfected((int)infected_count);
+        SetTextInfected((long)infected_count);
     }
 
     public void SetDeadCount(float count)
     {
         dead_count = count;
-        SetTextHealthy((int)dead_count);
+        SetTextHealthy((long)dead_count);
     }
 
     public void SetHealthyCount(float count)
     {
         healthy_count = count;
-        SetTextDead((int)healthy_count);
+        SetTextDead((long)healthy_count);
     }
 
-    public void SetTextInfected(int ppl)
+    public void SetTextInfected(long ppl)
     {
         text_infected.text = "Infected: " + ppl;
     }
 
-    public void SetTextHealthy(int ppl)
+    public void SetTextHealthy(long ppl)
     {
         text_healthy.text = "Healthy: " + ppl;
     }
 
-    public void SetTextDead(int ppl)
+    public void SetTextDead(long ppl)
     {
         text_dead.text = "Dead: " + ppl;
     }
