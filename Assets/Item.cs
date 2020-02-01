@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions;
 
-public class GameMgr : MonoBehaviour
+public class Item : MonoBehaviour
 {
+    public string id;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +16,5 @@ public class GameMgr : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void OnItemClicked(Item item)
-    {
-        Assert.IsTrue(item.id.Length > 0, "Item needs an id");
-        Debug.Log("OnItemClicked: " + item.id);
     }
 }
