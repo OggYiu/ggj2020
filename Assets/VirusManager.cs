@@ -63,9 +63,11 @@ public class VirusManager : MonoBehaviour
                     population = 0;
                 }
 
-                gameMgr.SetTextInfected((int)infected_population);
-                gameMgr.SetTextHealthy((int)population);
-                gameMgr.SetTextDead((int)killed_population);
+                gameMgr.SetTextInfected((long)infected_population);
+                gameMgr.SetTextHealthy((long)population);
+                gameMgr.SetTextDead((long)killed_population);
+
+                Debug.Log("Population: " + population);
             }
             else
             {

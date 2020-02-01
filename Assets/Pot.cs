@@ -42,7 +42,6 @@ public class Pot : MonoBehaviour
         {
             for(int i = 0; i < items.Count; ++i)
             {
-                Debug.Log("Item destroyed: " + items[i].name);
                 Destroy(items[i].gameObject, 0.1f);
             }
             items.Clear();
