@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class GameMgr : MonoBehaviour
 {
+    public Virus[] viruses;
+    public Virus CurrentVirus;
+
     public Transform ItemObjsParent;
     public ItemObj[] itemObjs;
     public Text text_infected;
@@ -29,6 +32,7 @@ public class GameMgr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CurrentVirus = viruses[0];
         speedTextDisplayer = FindObjectOfType<SpeedTextDisplayer>();
 
         SetInfectedRate(3);
@@ -160,6 +164,16 @@ public class GameMgr : MonoBehaviour
 
     public void DisplayVirusData(string json)
     {
-        text_virusData.text = "";
+        //text_virusData.text = "";
+    }
+
+    public Virus[] GetViruses()
+    {
+        return viruses;
+    }
+
+    public Virus GetCurrentVirus()
+    {
+        return CurrentVirus;
     }
 }
