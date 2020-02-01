@@ -22,6 +22,8 @@ public class GameMgr : MonoBehaviour
     public float healthy_rate = 3;
 
     private SpeedTextDisplayer speedTextDisplayer;
+    public StatusDisplayer potStatusDisplayer;
+    public StatusDisplayer gameStatusDisplayer;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,8 @@ public class GameMgr : MonoBehaviour
         SetHealthyRate(2);
 
         DisplaySpeechText("hello, how are you? I am good!");
+        DisplayPotStatus("Pot Ready!");
+        DisplayGameStatus("Game Start!");
     }
 
     // Update is called once per frame
@@ -140,5 +144,15 @@ public class GameMgr : MonoBehaviour
     public void DisplaySpeechText(string speechText)
     {
         speedTextDisplayer.Display(speechText);
+    }
+
+    public void DisplayPotStatus(string status)
+    {
+        potStatusDisplayer.Display(status);
+    }
+
+    public void DisplayGameStatus(string status)
+    {
+        gameStatusDisplayer.Display(status);
     }
 }
