@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class Pot : MonoBehaviour
 {
+    public Sprite[] waterSprites;
     public BoxCollider2D inputTrigger;
+    public float BOILING_RATE = 1;
     public float maxBoilingPoint = 0;
     public float boilingPoint = 0;
     public List<Item> items;
     public SpriteRenderer spriteRenderer;
+    public SpriteRenderer waterSpriteRenderer;
+    public AudioSource SFX_click;
+    public AudioSource SFX_addItem;
+    public AudioSource SFX_boil;
+
+    private float SPRITE_CHANGE_INTERVAL = 0.1f;
+    private float spriteChangeCountdown = 0;
+    private int lastSpriteIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +45,25 @@ public class Pot : MonoBehaviour
             }
             UpdateBoilingPotColor();
         }
+
+        if(spriteChangeCountdown > 0)
+        {
+            spriteChangeCountdown -= Time.deltaTime;
+            if(spriteChangeCountdown <= 0)
+            {
+                int spriteIndex = 0;
+
+                do
+                {
+                    spriteIndex = Random.Range(1, waterSprites.Length - 1);
+                }
+                while (lastSpriteIndex == spriteIndex);
+
+                waterSpriteRenderer.sprite = waterSprites[spriteIndex];
+                lastSpriteIndex = spriteIndex;
+                spriteChangeCountdown = SPRITE_CHANGE_INTERVAL;
+            }
+        }
     }
     void OnMouseDown()
     {
@@ -60,8 +89,13 @@ public class Pot : MonoBehaviour
 
             GameMgr gameMgr = FindObjectOfType<GameMgr>();
             gameMgr.CurrentVirus.CURE(list.ToArray());
-
             Debug.Log("CURE: " + list.ToArray());
+
+            lastSpriteIndex = 0;
+            waterSpriteRenderer.sprite = waterSprites[lastSpriteIndex];
+
+            SFX_click.Play();
+
         }
     }
 
@@ -73,6 +107,8 @@ public class Pot : MonoBehaviour
     public void ResetBoilingPoint()
     {
         boilingPoint = 0;
+        spriteChangeCountdown = 0;
+        SFX_boil.Stop();
     }
 
     public void UpdateBoilingPotColor()
@@ -88,7 +124,7 @@ public class Pot : MonoBehaviour
 
     public void UpdateBoilingPointCount()
     {
-        maxBoilingPoint = items.Count * 2;
+        maxBoilingPoint = items.Count * BOILING_RATE;
         if(boilingPoint > maxBoilingPoint)
         {
             boilingPoint = maxBoilingPoint;
@@ -105,9 +141,17 @@ public class Pot : MonoBehaviour
             return;
         }
 
+        if (items.Count == 0)
+        {
+            spriteChangeCountdown = SPRITE_CHANGE_INTERVAL;
+            SFX_boil.Play();
+        }
+
         items.Add(item);
 
         UpdateBoilingPointCount();
+
+        SFX_addItem.Play();
     }
 
     //When the Primitive exits the collision, it will change Color
