@@ -76,8 +76,6 @@ public class VirusManager : MonoBehaviour
                 {
                     population += cure_population;
                     infected_population -= cure_population;
-
-                    Debug.Log("cure_population: " + cure_population);
                 }
 
                 gameMgr.SetTextInfected((long)infected_population);

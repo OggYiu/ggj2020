@@ -40,14 +40,28 @@ public class Pot : MonoBehaviour
     {
         if (isReady())
         {
-            for(int i = 0; i < items.Count; ++i)
+            //testing
+            /*
+            string[] items = { "Honey", "Peppermint" };
+            CurrentVirus.CURE(items);
+            */
+
+            List<string> list = new List<string>();
+
+            for (int i = 0; i < items.Count; ++i)
             {
+                list.Add(items[i].name);
                 Destroy(items[i].gameObject, 0.1f);
             }
             items.Clear();
 
             ResetBoilingPoint();
             spriteRenderer.color = Color.white;
+
+            GameMgr gameMgr = FindObjectOfType<GameMgr>();
+            gameMgr.CurrentVirus.CURE(list.ToArray());
+
+            Debug.Log("CURE: " + list.ToArray());
         }
     }
 

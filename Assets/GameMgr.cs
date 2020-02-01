@@ -85,10 +85,6 @@ public class GameMgr : MonoBehaviour
         float minY = 6.2f;
         obj.transform.parent = ItemObjsParent;
         obj.transform.position = new Vector3(Random.Range(minX, maxX), minY);
-
-        //testing
-        string[] items = { "Honey", "Peppermint"};
-        CurrentVirus.CURE(items);
     }
 
     public void SetInfectedCount(float count)
