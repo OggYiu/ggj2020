@@ -11,11 +11,11 @@ public class SpeedTextDisplayer : MonoBehaviour
     public float DISAPPEAR_AFTER = 2.0f;
     private float rateAccum = 0f;
     private float disappearAccum = 0f;
+    public AnchorAnimator anchorAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -29,6 +29,7 @@ public class SpeedTextDisplayer : MonoBehaviour
             {
                 wordsToDisplay = currentSpeechText.Length;
                 disappearAccum = DISAPPEAR_AFTER;
+                anchorAnimator.EndAnimMouth();
             }
             text_speech.text = currentSpeechText.Substring(0, wordsToDisplay);
         }
@@ -46,6 +47,7 @@ public class SpeedTextDisplayer : MonoBehaviour
 
     public void Display(string speechText)
     {
+        anchorAnimator.StartAnimMouth();
         currentSpeechText = speechText;
         rateAccum = 0;
         disappearAccum = 0;
