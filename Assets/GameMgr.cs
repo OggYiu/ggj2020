@@ -4,6 +4,13 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
+public enum CureStatus
+{
+    Bad,
+    Normal,
+    Good
+}
+
 public class GameMgr : MonoBehaviour
 {
     public Virus[] viruses;
@@ -40,9 +47,12 @@ public class GameMgr : MonoBehaviour
         //SetDeadRate(1);
         //SetHealthyRate(2);
 
-        DisplaySpeechText("hello, how are you? I am good!");
-        DisplayPotStatus("Pot Ready!");
-        DisplayGameStatus("Game Start!");
+        //DisplaySpeechText("hello, how are you? I am good!");
+        //DisplayPotStatus("Pot Ready!");
+        //DisplayGameStatus("Game Start!");
+
+        DisplaySpeechTextNewVirus("Common Cold");
+        DisplaySpeechTextCureStatus(CureStatus.Good);
 
         string virusName = CurrentVirus.virus_name;
         string[] symptoms = CurrentVirus.symptoms;
@@ -110,19 +120,19 @@ public class GameMgr : MonoBehaviour
     public void SetTextInfected(long ppl, long total)
     {
         //text_infected.text = "Infected: " + ((float)ppl / (float)total).ToString("00.00");
-        text_infected.text = "Infected: " + ppl + " (" + ((float)ppl / (float)total * 100).ToString("#0.0000") + "%)";
+        text_infected.text = ppl + " (" + ((float)ppl / (float)total * 100).ToString("#0.0000") + "%)";
     }
 
     public void SetTextHealthy(long ppl, long total)
     {
         //text_healthy.text = "Healthy: " + ppl;
-        text_healthy.text = "Healthy: " + ppl + " (" + ((float)ppl / (float)total * 100).ToString("#0.0000") + "%)";
+        text_healthy.text = ppl + " (" + ((float)ppl / (float)total * 100).ToString("#0.0000") + "%)";
     }
 
     public void SetTextDead(long ppl, long total)
     {
         //text_dead.text = "Dead: " + ppl;
-        text_dead.text = "Dead: " + ppl + " (" + ((float)ppl / (float)total * 100).ToString("#0.0000") + "%)";
+        text_dead.text = ppl + " (" + ((float)ppl / (float)total * 100).ToString("#0.0000") + "%)";
     }
 
     public void SetInfectedRate(float rate)
@@ -161,6 +171,34 @@ public class GameMgr : MonoBehaviour
     public void DisplaySpeechText(string speechText)
     {
         speedTextDisplayer.Display(speechText);
+    }
+
+    public void DisplaySpeechTextNewVirus(string virusName)
+    {
+        string speechText = "Good Evening! Here is the breaking news.\n"
+            + "A new virus was found today. It is called \"" + virusName + "\"\n."
+            + "It is spreading around the world.\n"
+            + "Scientists are competing against time to look for the vaccine.";
+        speedTextDisplayer.Display(speechText);
+    }
+
+    public void DisplaySpeechTextCureStatus(CureStatus cureStatus)
+    {
+        string speechText = "";
+        switch(cureStatus)
+        {
+            case CureStatus.Bad:
+                speechText = "The new vaccine is totally not working.\nHumanity will be erased if no progress will be made.";
+                break;
+            case CureStatus.Normal:
+                speechText = "The new vaccine is effective but not guarantee 100 % cure.";
+                break;
+            case CureStatus.Good:
+                speechText = "The new vaccine is absolutely working.\nNo more people will be infected soon.";
+                break;
+        }
+
+       speedTextDisplayer.Display(speechText);
     }
 
     public void DisplayPotStatus(string status)
