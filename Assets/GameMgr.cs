@@ -80,8 +80,8 @@ public class GameMgr : MonoBehaviour
         Assert.IsTrue(targetItemObj != null, "Invalid target Item Obj: " + item.id);
 
         ItemObj obj = Instantiate<ItemObj>(targetItemObj);
-        float minX = -3.0f;
-        float maxX = 3.0f;
+        float minX = -2.0f;
+        float maxX = 2.0f;
         float minY = 6.2f;
         obj.transform.parent = ItemObjsParent;
         obj.transform.position = new Vector3(Random.Range(minX, maxX), minY);
