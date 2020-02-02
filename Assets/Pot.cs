@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Pot : MonoBehaviour
 {
+    public GameObject[] GFXs;
     public Sprite[] waterSprites;
     public BoxCollider2D inputTrigger;
     public float BOILING_RATE = 1;
@@ -15,12 +16,15 @@ public class Pot : MonoBehaviour
     public AudioSource SFX_click;
     public AudioSource SFX_addItem;
     public AudioSource SFX_boil;
+    public AudioSource SFX_ready;
     public SpriteRenderer spriteRenderer_Ready;
     //public Animator GFX_Ready;
 
     private float SPRITE_CHANGE_INTERVAL = 0.1f;
     private float spriteChangeCountdown = 0;
     private int lastSpriteIndex = 0;
+
+    private bool readyGfxShown = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +48,17 @@ public class Pot : MonoBehaviour
             if (boilingPoint >= maxBoilingPoint)
             {
                 boilingPoint = maxBoilingPoint;
+
+                if(!readyGfxShown)
+                {
+                    GameObject gfx = Instantiate(GFXs[0]);
+                    gfx.transform.position = new Vector3(0, 0, 0);
+                    gfx.transform.localScale = new Vector3(3, 3, 3);
+                    Destroy(gfx, 2.0f);
+                    readyGfxShown = true;
+
+                    SFX_ready.Play();
+                }
                 //spriteRenderer_Ready.enabled = true;
                 //GFX_Ready.enabled = true;
             }
@@ -93,6 +108,12 @@ public class Pot : MonoBehaviour
 
             SFX_click.Play();
 
+            readyGfxShown = false;
+
+            GameObject gfx = Instantiate(GFXs[1]);
+            gfx.transform.position = new Vector3(0, 0, 0);
+            gfx.transform.localScale = new Vector3(3, 3, 3);
+            Destroy(gfx, 2.0f);
             //spriteRenderer_Ready.enabled = false;
             //GFX_Ready.enabled = false;
         }
@@ -155,6 +176,7 @@ public class Pot : MonoBehaviour
             SFX_boil.Play();
         }
 
+        readyGfxShown = false;
         items.Add(item);
 
         UpdateBoilingPointCount();
