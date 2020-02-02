@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class StatusDisplayer : MonoBehaviour
 {
     public Text text_status;
-    public float COUNT_DOWN = 2;
+    public float COUNT_DOWN = 1;
     private float countDown = 0;
 
     // Start is called before the first frame update

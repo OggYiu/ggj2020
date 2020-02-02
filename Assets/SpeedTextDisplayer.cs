@@ -29,7 +29,8 @@ public class SpeedTextDisplayer : MonoBehaviour
             {
                 wordsToDisplay = currentSpeechText.Length;
                 disappearAccum = DISAPPEAR_AFTER;
-                anchorAnimator.EndAnimMouth();
+
+                if (anchorAnimator != null) { anchorAnimator.EndAnimMouth(); }
             }
             text_speech.text = currentSpeechText.Substring(0, wordsToDisplay);
         }
