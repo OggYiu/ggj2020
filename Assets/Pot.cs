@@ -104,7 +104,7 @@ public class Pot : MonoBehaviour
             gameMgr.CurrentVirus.CURE(list.ToArray());
 
             lastSpriteIndex = 0;
-            waterSpriteRenderer.sprite = waterSprites[lastSpriteIndex];
+            waterSpriteRenderer.sprite = waterSprites[0];
 
             SFX_click.Play();
 

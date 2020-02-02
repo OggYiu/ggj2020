@@ -178,7 +178,7 @@ public class GameMgr : MonoBehaviour
 
     public void DisplaySpeechTextNewVirus(string virusName)
     {
-        string speechText = "Good Evening! Here is the breaking news.\n"
+        string speechText = "Breaking news!\n"
             + "A new virus was found today. It is called \"" + virusName + "\"\n."
             + "It is spreading around the world.\n"
             + "Scientists are competing against time to look for the vaccine.";
@@ -216,10 +216,10 @@ public class GameMgr : MonoBehaviour
 
     public void DisplayVirusData(string name, string[] symptoms)
     {
-        string text = "<color=#ffffff>" + name + "</color>\n";
+        string text = "<color=#39527a>" + name + "</color>\n";
         foreach(string symptom in symptoms)
         {
-            text += "<color=#aaaaff>" + symptom  + "</color>\n";
+            text += "<color=#000000>" + symptom  + "</color>\n";
         }
 
         text_virusData.text = text;
