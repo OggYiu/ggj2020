@@ -7,7 +7,8 @@ public class VirusManager : MonoBehaviour
     // Next update in second
     private int nextUpdate = 1;
 
-    public long population = 7700000000;
+    public long init_population = 7700000000;
+    public long population = 0;
     public long infected_population = 0;
     public long killed_population = 0;
 
@@ -18,7 +19,7 @@ public class VirusManager : MonoBehaviour
     void Start()
     {
         gameMgr = FindObjectOfType<GameMgr>();
-        
+        population = init_population;
     }
 
     // Update is called once per frame
@@ -27,7 +28,7 @@ public class VirusManager : MonoBehaviour
         // If the next update is reached
         if (Time.time >= nextUpdate)
         {
-            Debug.Log(Time.time + ">=" + nextUpdate);
+            //Debug.Log(Time.time + ">=" + nextUpdate);
             // Change the next update (current second+1)
             nextUpdate = Mathf.FloorToInt(Time.time) + 1;
             // Call your fonction
@@ -81,6 +82,12 @@ public class VirusManager : MonoBehaviour
                 gameMgr.SetTextInfected((long)infected_population);
                 gameMgr.SetTextHealthy((long)population);
                 gameMgr.SetTextDead((long)killed_population);
+
+                /*
+                gameMgr.SetTextInfected((long)infected_population/init_population);
+                gameMgr.SetTextHealthy((long)population / init_population);
+                gameMgr.SetTextDead((long)killed_population / init_population);
+                */
 
                 gameMgr.SetInfectedRate(infected_population - orig_infected_popultation);
                 gameMgr.SetHealthyRate(population - orig_popultation);

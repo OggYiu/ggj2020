@@ -69,17 +69,11 @@ public class Pot : MonoBehaviour
     {
         if (isReady())
         {
-            //testing
-            /*
-            string[] items = { "Honey", "Peppermint" };
-            CurrentVirus.CURE(items);
-            */
-
             List<string> list = new List<string>();
 
             for (int i = 0; i < items.Count; ++i)
             {
-                list.Add(items[i].name);
+                list.Add(items[i].id);
                 Destroy(items[i].gameObject, 0.1f);
             }
             items.Clear();
@@ -89,13 +83,11 @@ public class Pot : MonoBehaviour
 
             GameMgr gameMgr = FindObjectOfType<GameMgr>();
             gameMgr.CurrentVirus.CURE(list.ToArray());
-            Debug.Log("CURE: " + list.ToArray());
 
             lastSpriteIndex = 0;
             waterSpriteRenderer.sprite = waterSprites[lastSpriteIndex];
 
             SFX_click.Play();
-
         }
     }
 

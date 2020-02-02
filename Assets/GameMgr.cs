@@ -33,19 +33,19 @@ public class GameMgr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurrentVirus = viruses[0];
+        CurrentVirus = viruses[1];
         speedTextDisplayer = FindObjectOfType<SpeedTextDisplayer>();
 
-        SetInfectedRate(3);
-        SetDeadRate(1);
-        SetHealthyRate(2);
+        //SetInfectedRate(3);
+        //SetDeadRate(1);
+        //SetHealthyRate(2);
 
         DisplaySpeechText("hello, how are you? I am good!");
         DisplayPotStatus("Pot Ready!");
         DisplayGameStatus("Game Start!");
 
-        string virusName = "Virus_name";
-        string[] symptoms = { "Matt", "Joanne", "Robert" };
+        string virusName = CurrentVirus.virus_name;
+        string[] symptoms = CurrentVirus.symptoms;
         DisplayVirusData(virusName, symptoms);
 
         //SetTextHealthy(100);
