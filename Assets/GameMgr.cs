@@ -87,6 +87,7 @@ public class GameMgr : MonoBehaviour
         obj.transform.position = new Vector3(Random.Range(minX, maxX), minY);
     }
 
+    /*
     public void SetInfectedCount(float count)
     {
         infected_count = count;
@@ -104,20 +105,24 @@ public class GameMgr : MonoBehaviour
         healthy_count = count;
         SetTextDead((long)healthy_count);
     }
+    */
 
-    public void SetTextInfected(long ppl)
+    public void SetTextInfected(long ppl, long total)
     {
-        text_infected.text = "Infected: " + ppl;
+        //text_infected.text = "Infected: " + ((float)ppl / (float)total).ToString("00.00");
+        text_infected.text = "Infected: " + ppl + " (" + ((float)ppl / (float)total * 100).ToString("#0.0000") + "%)";
     }
 
-    public void SetTextHealthy(long ppl)
+    public void SetTextHealthy(long ppl, long total)
     {
-        text_healthy.text = "Healthy: " + ppl;
+        //text_healthy.text = "Healthy: " + ppl;
+        text_healthy.text = "Healthy: " + ppl + " (" + ((float)ppl / (float)total * 100).ToString("#0.0000") + "%)";
     }
 
-    public void SetTextDead(long ppl)
+    public void SetTextDead(long ppl, long total)
     {
-        text_dead.text = "Dead: " + ppl;
+        //text_dead.text = "Dead: " + ppl;
+        text_dead.text = "Dead: " + ppl + " (" + ((float)ppl / (float)total * 100).ToString("#0.0000") + "%)";
     }
 
     public void SetInfectedRate(float rate)

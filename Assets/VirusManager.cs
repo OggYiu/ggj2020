@@ -48,24 +48,11 @@ public class VirusManager : MonoBehaviour
             if (population > 0)
             {
                 long orig_popultation = population;
-                long orig_infected_popultation = infected_population;
+
+                //Kill
                 long orig_killed_population = killed_population;
-
-                infected_population = (long)((float)infected_population * current_virus.infection_rate);
-                if (infected_population >= population)
-                {
-                    infected_population = population;
-                }
-
-                population = population - infected_population + orig_infected_popultation;
-                if (population < 0)
-                {
-                    population = 0;
-                }
-
                 killed_population += (long)((float)infected_population * current_virus.dead_rate);
                 infected_population = infected_population - killed_population + orig_killed_population;
-
                 if (infected_population < 0)
                 {
                     infected_population = 0;
@@ -79,15 +66,28 @@ public class VirusManager : MonoBehaviour
                     infected_population -= cure_population;
                 }
 
+                //Infection
+                long orig_infected_popultation = infected_population;
+                infected_population = (long)((float)infected_population * current_virus.infection_rate);
+                if (infected_population >= population)
+                {
+                    infected_population = population;
+                }
+                population = population - infected_population + orig_infected_popultation;
+                if (population < 0)
+                {
+                    population = 0;
+                }
+
+                /*
                 gameMgr.SetTextInfected((long)infected_population);
                 gameMgr.SetTextHealthy((long)population);
                 gameMgr.SetTextDead((long)killed_population);
-
-                /*
-                gameMgr.SetTextInfected((long)infected_population/init_population);
-                gameMgr.SetTextHealthy((long)population / init_population);
-                gameMgr.SetTextDead((long)killed_population / init_population);
                 */
+
+                gameMgr.SetTextInfected(infected_population, init_population);
+                gameMgr.SetTextHealthy(population, init_population);
+                gameMgr.SetTextDead(killed_population, init_population);
 
                 gameMgr.SetInfectedRate(infected_population - orig_infected_popultation);
                 gameMgr.SetHealthyRate(population - orig_popultation);

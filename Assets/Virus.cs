@@ -34,13 +34,17 @@ public class Virus : MonoBehaviour
     {
         int cure_count = cures.Length;
         int correct_count = 0;
+        List<string> correctedCure = new List<string>(cures);
+
         foreach (string item in items)
         {
-            foreach (string cure in cures)
+            foreach (string cure in correctedCure)
             {
                 if (cure == item)
                 {
                     correct_count++;
+                    correctedCure.Remove(cure);
+                    break;
                 }
             }
         }
