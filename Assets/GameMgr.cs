@@ -94,7 +94,7 @@ public class GameMgr : MonoBehaviour
         float maxX = 2.0f;
         float minY = 6.2f;
         obj.transform.parent = ItemObjsParent;
-        obj.transform.position = new Vector3(Random.Range(minX, maxX), minY);
+        obj.transform.position = new Vector3(Random.Range(minX, maxX), minY, -2f);
     }
 
     /*
