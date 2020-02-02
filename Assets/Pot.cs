@@ -114,11 +114,13 @@ public class Pot : MonoBehaviour
     public void UpdateBoilingPotColor()
     {
         float factor = boilingPoint / maxBoilingPoint;
-        spriteRenderer.color = new Color(factor, 1.0f - factor, 1.0f - factor);
+        Color color = new Color(factor, 1.0f - factor, 1.0f - factor);
 
-        foreach(Item item in items)
+        //spriteRenderer.color = new Color(factor, 1.0f - factor, 1.0f - factor);
+
+        foreach (Item item in items)
         {
-            item.SetColor(spriteRenderer.color);
+            item.SetColor(color);
         }
     }
 
