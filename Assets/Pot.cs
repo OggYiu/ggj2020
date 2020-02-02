@@ -119,7 +119,14 @@ public class Pot : MonoBehaviour
 
         foreach (Item item in items)
         {
-            item.SetColor(color);
+            float scaleFactor = 1.0f - factor / 2.0f;
+
+            if (item.transform.localScale.x > scaleFactor)
+            {
+                item.SetColor(color);
+
+                item.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+            }
         }
     }
 
