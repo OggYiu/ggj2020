@@ -12,13 +12,22 @@ public class Virus : MonoBehaviour
     public string[] cures;
     public string[] symptoms;
 
+    public string speech_new_found;
+    public string speech_cure_partly;
+    public string speech_cure_none;
+    public string speech_cure_complete;
+
     private float orig_dead_rate;
     private float orig_cure_rate;
     private float orig_infection_rate;
 
+    private GameMgr gameMgr;
+
     // Start is called before the first frame update
     void Start()
     {
+        gameMgr = FindObjectOfType<GameMgr>();
+
         orig_dead_rate = dead_rate;
         orig_cure_rate = cure_rate;
         orig_infection_rate = infection_rate;
@@ -56,6 +65,9 @@ public class Virus : MonoBehaviour
         {
             infection_rate = 1f;
             cure_rate = 1f;
+
+            //gameMgr.DisplaySpeechText(current_virus.speech_new_found);
+
             return true;
         }
         else if(correct_count > 0)

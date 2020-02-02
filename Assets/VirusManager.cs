@@ -42,6 +42,7 @@ public class VirusManager : MonoBehaviour
         {
             current_virus = gameMgr.CurrentVirus;
             infected_population = current_virus.init_infection;
+            gameMgr.DisplaySpeechText(current_virus.speech_new_found);
         }
         else
         {
@@ -89,9 +90,11 @@ public class VirusManager : MonoBehaviour
                 gameMgr.SetTextHealthy(population, init_population);
                 gameMgr.SetTextDead(killed_population, init_population);
 
+                /*
                 gameMgr.SetInfectedRate(infected_population - orig_infected_popultation);
                 gameMgr.SetHealthyRate(population - orig_popultation);
                 gameMgr.SetDeadRate(killed_population - orig_killed_population);
+                */
             }
             else
             {
