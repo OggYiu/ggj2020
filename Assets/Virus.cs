@@ -16,9 +16,13 @@ public class Virus : MonoBehaviour
     private float orig_cure_rate;
     private float orig_infection_rate;
 
+    private GameMgr gameMgr;
+
     // Start is called before the first frame update
     void Start()
     {
+        gameMgr = FindObjectOfType<GameMgr>();
+
         orig_dead_rate = dead_rate;
         orig_cure_rate = cure_rate;
         orig_infection_rate = infection_rate;
@@ -56,6 +60,9 @@ public class Virus : MonoBehaviour
         {
             infection_rate = 1f;
             cure_rate = 1f;
+
+            gameMgr.DisplaySpeechTextCureStatus(CureStatus.Good);
+
             return true;
         }
         else if(correct_count > 0)
@@ -68,12 +75,16 @@ public class Virus : MonoBehaviour
             Debug.Log("infection_rate: " + infection_rate);
             Debug.Log("dead_rate: " + dead_rate);
             Debug.Log("cure_rate: " + cure_rate);
+
+            gameMgr.DisplaySpeechTextCureStatus(CureStatus.Normal);
         }
         else if (correct_count == 0)
         {
             dead_rate = orig_dead_rate;
             cure_rate = orig_cure_rate;
             infection_rate = orig_infection_rate;
+
+            gameMgr.DisplaySpeechTextCureStatus(CureStatus.Bad);
         }
 
         return false;

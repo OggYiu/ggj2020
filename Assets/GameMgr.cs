@@ -25,7 +25,7 @@ public class GameMgr : MonoBehaviour
     public Text text_healthyRate;
     public Text text_deadRate;
     public Text text_virusData;
-    
+
     public float infected_count = 0;
     public float dead_count = 0;
     public float healthy_count = 0;
@@ -40,7 +40,7 @@ public class GameMgr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurrentVirus = viruses[1];
+        CurrentVirus = viruses[0];
         speedTextDisplayer = FindObjectOfType<SpeedTextDisplayer>();
 
         //SetInfectedRate(3);
@@ -119,40 +119,41 @@ public class GameMgr : MonoBehaviour
 
     public void SetTextInfected(long ppl, long total)
     {
-        //text_infected.text = "Infected: " + ((float)ppl / (float)total).ToString("00.00");
-        text_infected.text = ppl + " (" + ((float)ppl / (float)total * 100).ToString("#0.0000") + "%)";
+        text_infected.text = ppl.ToString();
+        SetInfectedRate((float)ppl / (float)total * 100);
     }
 
     public void SetTextHealthy(long ppl, long total)
     {
-        //text_healthy.text = "Healthy: " + ppl;
-        text_healthy.text = ppl + " (" + ((float)ppl / (float)total * 100).ToString("#0.0000") + "%)";
+        text_healthy.text = ppl.ToString();
+        SetHealthyRate((float)ppl / (float)total * 100);
     }
 
     public void SetTextDead(long ppl, long total)
     {
-        //text_dead.text = "Dead: " + ppl;
-        text_dead.text = ppl + " (" + ((float)ppl / (float)total * 100).ToString("#0.0000") + "%)";
+        text_dead.text = ppl.ToString();
+        SetDeadRate((float)ppl / (float)total * 100);
     }
 
     public void SetInfectedRate(float rate)
     {
         infected_rate = rate;
-        SetTextInfectedRate((int)infected_rate);
+        text_infectedRate.text = rate.ToString("#0.0000") + "%";
     }
 
     public void SetHealthyRate(float rate)
     {
         healthy_rate = rate;
-        SetTextHealthyRate((int)healthy_rate);
+        text_healthyRate.text = rate.ToString("#0.0000") + "%";
     }
 
     public void SetDeadRate(float rate)
     {
         dead_rate = rate;
-        SetTextDeadRate((int)dead_rate);
+        text_deadRate.text = rate.ToString("#0.0000") + "%";
     }
 
+    /*
     public void SetTextInfectedRate(int rate)
     {
         text_infectedRate.text = (rate > 0 ? "↑" : "↓") + ": " + rate;
@@ -167,6 +168,7 @@ public class GameMgr : MonoBehaviour
     {
         text_deadRate.text = (rate > 0 ? "↑" : "↓") + ": " + rate;
     }
+    */
 
     public void DisplaySpeechText(string speechText)
     {
