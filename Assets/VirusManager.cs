@@ -106,6 +106,16 @@ public class VirusManager : MonoBehaviour
 
     public bool CURE(string[] items)
     {
-        return current_virus.CURE(items);
+        bool success = current_virus.CURE(items);
+
+        Debug.Log(success);
+
+        if (success)
+        {
+            Debug.Log("SUCCESS");
+            infected_population = current_virus.init_infection;
+            gameMgr.NextVirus();
+        }
+        return success;
     }
 }
