@@ -234,5 +234,9 @@ public class GameMgr : MonoBehaviour
         string virusName = CurrentVirus.virus_name;
         string[] symptoms = CurrentVirus.symptoms;
         DisplayVirusData(virusName, symptoms);
+
+        VirusManager vm = FindObjectOfType<VirusManager>();
+        vm.current_virus = null;
+        
     }
 }
