@@ -15,6 +15,8 @@ public class Pot : MonoBehaviour
     public AudioSource SFX_click;
     public AudioSource SFX_addItem;
     public AudioSource SFX_boil;
+    public SpriteRenderer spriteRenderer_Ready;
+    //public Animator GFX_Ready;
 
     private float SPRITE_CHANGE_INTERVAL = 0.1f;
     private float spriteChangeCountdown = 0;
@@ -39,9 +41,11 @@ public class Pot : MonoBehaviour
         if(items.Count > 0)
         {
             boilingPoint += Time.deltaTime;
-            if (boilingPoint > maxBoilingPoint)
+            if (boilingPoint >= maxBoilingPoint)
             {
                 boilingPoint = maxBoilingPoint;
+                //spriteRenderer_Ready.enabled = true;
+                //GFX_Ready.enabled = true;
             }
             UpdateBoilingPotColor();
         }
@@ -88,6 +92,9 @@ public class Pot : MonoBehaviour
             waterSpriteRenderer.sprite = waterSprites[lastSpriteIndex];
 
             SFX_click.Play();
+
+            //spriteRenderer_Ready.enabled = false;
+            //GFX_Ready.enabled = false;
         }
     }
 
@@ -119,7 +126,7 @@ public class Pot : MonoBehaviour
     public void UpdateBoilingPointCount()
     {
         maxBoilingPoint = items.Count * BOILING_RATE;
-        if(boilingPoint > maxBoilingPoint)
+        if(boilingPoint >= maxBoilingPoint)
         {
             boilingPoint = maxBoilingPoint;
         }
