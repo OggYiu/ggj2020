@@ -1955,7 +1955,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &455913923
 GameObject:
@@ -2401,7 +2401,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -3536,6 +3536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef005e7dcbe5047ebaf6e695ca1ee20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  init_population: 7700000000
   population: 7700000000
   infected_population: 0
   killed_population: 0
@@ -3551,7 +3552,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1039051673
 GameObject:
@@ -4540,7 +4541,7 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: symptoms.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
@@ -4550,22 +4551,22 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: infection_rate
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: symptoms.Array.data[0]
-      value: Coughing
+      value: Hungry
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: symptoms.Array.data[1]
-      value: Vomiting
+      value: Money Hunger
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: symptoms.Array.data[2]
-      value: Insomnia
+      value: Bumping
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
@@ -4595,22 +4596,32 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.data[0]
-      value: Honey
+      value: banana
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.data[1]
-      value: Onion Juice
+      value: coke
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.data[2]
-      value: Chamomile
+      value: onion
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cure_rate
-      value: 0.05
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: dead_rate
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: symptoms.Array.data[3]
+      value: Insomnia
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cd6261c3d689427486966c385246ce6, type: 3}
@@ -5979,6 +5990,314 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033326795}
   m_CullTransparentMesh: 0
+--- !u!1001 &2063882364
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2551587588923792494, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_Name
+      value: VirusC
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cure.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: symptoms.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cures.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: infection_rate
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: symptoms.Array.data[0]
+      value: Coughing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: symptoms.Array.data[1]
+      value: Vomiting
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: symptoms.Array.data[2]
+      value: Insomnia
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cure.Array.data[0]
+      value: Honey
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cure.Array.data[1]
+      value: Onion Juice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cure.Array.data[2]
+      value: Chamomile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: virus_name
+      value: Walking Dead Virus
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: init_infection
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cures.Array.data[0]
+      value: Honey
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cures.Array.data[1]
+      value: Onion Juice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cures.Array.data[2]
+      value: Chamomile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cure_rate
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: dead_rate
+      value: 0.2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0cd6261c3d689427486966c385246ce6, type: 3}
+--- !u!1001 &2084554963
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2551587588923792494, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_Name
+      value: VirusD
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 572253902754402847, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cure.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: symptoms.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cures.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: infection_rate
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: symptoms.Array.data[0]
+      value: Coughing
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: symptoms.Array.data[1]
+      value: Vomiting
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: symptoms.Array.data[2]
+      value: Insomnia
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cure.Array.data[0]
+      value: Honey
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cure.Array.data[1]
+      value: Onion Juice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cure.Array.data[2]
+      value: Chamomile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: virus_name
+      value: Walking Dead Virus
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: init_infection
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cures.Array.data[0]
+      value: Honey
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cures.Array.data[1]
+      value: Onion Juice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cures.Array.data[2]
+      value: Chamomile
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cure_rate
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: dead_rate
+      value: 0.25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0cd6261c3d689427486966c385246ce6, type: 3}
 --- !u!1 &2131752964
 GameObject:
   m_ObjectHideFlags: 0
@@ -6212,7 +6531,7 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: infection_rate
-      value: 2.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
@@ -6237,7 +6556,7 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: virus_name
-      value: Cold
+      value: Common Cold
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
@@ -6252,6 +6571,11 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cure_rate
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: dead_rate
       value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
