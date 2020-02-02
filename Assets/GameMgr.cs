@@ -15,6 +15,7 @@ public class GameMgr : MonoBehaviour
 {
     public Virus[] viruses;
     public Virus CurrentVirus;
+    private int current_virus_index = 0;
 
     public Transform ItemObjsParent;
     public ItemObj[] itemObjs;
@@ -40,7 +41,7 @@ public class GameMgr : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurrentVirus = viruses[0];
+        CurrentVirus = viruses[current_virus_index];
         speedTextDisplayer = FindObjectOfType<SpeedTextDisplayer>();
 
         //SetInfectedRate(3);
@@ -51,8 +52,8 @@ public class GameMgr : MonoBehaviour
         //DisplayPotStatus("Pot Ready!");
         //DisplayGameStatus("Game Start!");
 
-        DisplaySpeechTextNewVirus("Common Cold");
-        DisplaySpeechTextCureStatus(CureStatus.Good);
+        //DisplaySpeechTextNewVirus("Common Cold");
+        //DisplaySpeechTextCureStatus(CureStatus.Good);
 
         string virusName = CurrentVirus.virus_name;
         string[] symptoms = CurrentVirus.symptoms;
@@ -222,5 +223,16 @@ public class GameMgr : MonoBehaviour
         }
 
         text_virusData.text = text;
+    }
+
+    public void NextVirus()
+    {
+        current_virus_index++;
+        CurrentVirus = viruses[current_virus_index];
+        DisplaySpeechTextNewVirus(CurrentVirus.virus_name);
+
+        string virusName = CurrentVirus.virus_name;
+        string[] symptoms = CurrentVirus.symptoms;
+        DisplayVirusData(virusName, symptoms);
     }
 }

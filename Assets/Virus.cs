@@ -62,7 +62,6 @@ public class Virus : MonoBehaviour
             cure_rate = 1f;
 
             gameMgr.DisplaySpeechTextCureStatus(CureStatus.Good);
-
             return true;
         }
         else if(correct_count > 0)
