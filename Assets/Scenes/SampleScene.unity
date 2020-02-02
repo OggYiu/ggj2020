@@ -805,17 +805,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 783268254257740129, guid: 790b70f889ecc7b4a8e5d1471126a8cf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 525257963}
     - target: {fileID: 783268254257740135, guid: 790b70f889ecc7b4a8e5d1471126a8cf,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 4ef686d49732ba8479738d9b4148b964,
         type: 3}
-    - target: {fileID: 783268254257740129, guid: 790b70f889ecc7b4a8e5d1471126a8cf,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 525257963}
     - target: {fileID: 783268254257740128, guid: 790b70f889ecc7b4a8e5d1471126a8cf,
         type: 3}
       propertyPath: id
@@ -2019,17 +2019,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 783268254257740129, guid: 790b70f889ecc7b4a8e5d1471126a8cf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 525257963}
     - target: {fileID: 783268254257740135, guid: 790b70f889ecc7b4a8e5d1471126a8cf,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e51ba1eb6a5ca694481eefe3faacec03,
         type: 3}
-    - target: {fileID: 783268254257740129, guid: 790b70f889ecc7b4a8e5d1471126a8cf,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 525257963}
     - target: {fileID: 783268254257740128, guid: 790b70f889ecc7b4a8e5d1471126a8cf,
         type: 3}
       propertyPath: id
@@ -4146,7 +4146,7 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: symptoms.Array.data[0]
-      value: Hungry
+      value: Coaching
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
@@ -4186,17 +4186,17 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.data[0]
-      value: banana
+      value: honey
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.data[1]
-      value: coke
+      value: monk
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.data[2]
-      value: onion
+      value: cockduster
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
@@ -4211,12 +4211,12 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: symptoms.Array.data[3]
-      value: Insomnia
+      value: Constipation
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.data[3]
-      value: onion
+      value: prunes
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cd6261c3d689427486966c385246ce6, type: 3}
@@ -6271,12 +6271,12 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: symptoms.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
@@ -6296,7 +6296,7 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: symptoms.Array.data[2]
-      value: Insomnia
+      value: Greenish Skin
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
@@ -6331,12 +6331,12 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.data[1]
-      value: Onion Juice
+      value: onionjuice
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.data[2]
-      value: Chamomile
+      value: bleah
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
@@ -6347,6 +6347,16 @@ PrefabInstance:
         type: 3}
       propertyPath: dead_rate
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: symptoms.Array.data[3]
+      value: A face that only mother could love
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cures.Array.data[3]
+      value: bible
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cd6261c3d689427486966c385246ce6, type: 3}
@@ -6630,12 +6640,12 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: symptoms.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
@@ -6645,17 +6655,17 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: symptoms.Array.data[0]
-      value: Coughing
+      value: Vomiting Blood
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: symptoms.Array.data[1]
-      value: Vomiting
+      value: Tearing
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: symptoms.Array.data[2]
-      value: Insomnia
+      value: Suffocation
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
@@ -6685,17 +6695,17 @@ PrefabInstance:
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.data[0]
-      value: Honey
+      value: carrie
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.data[1]
-      value: Onion Juice
+      value: badcop
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
       propertyPath: cures.Array.data[2]
-      value: Chamomile
+      value: votingballot
       objectReference: {fileID: 0}
     - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
         type: 3}
@@ -6706,6 +6716,26 @@ PrefabInstance:
         type: 3}
       propertyPath: dead_rate
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: symptoms.Array.data[3]
+      value: Feeling Injustice
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cures.Array.data[3]
+      value: jail
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: cures.Array.data[4]
+      value: honey
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528047378299974713, guid: 0cd6261c3d689427486966c385246ce6,
+        type: 3}
+      propertyPath: symptoms.Array.data[4]
+      value: Vomiting
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cd6261c3d689427486966c385246ce6, type: 3}

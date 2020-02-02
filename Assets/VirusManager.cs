@@ -13,7 +13,7 @@ public class VirusManager : MonoBehaviour
     public long killed_population = 0;
 
     private GameMgr gameMgr;
-    private Virus current_virus;
+    public Virus current_virus;
 
     // Start is called before the first frame update
     void Start()
@@ -102,20 +102,5 @@ public class VirusManager : MonoBehaviour
                 Debug.Log("GAME OVER");
             }
         }
-    }
-
-    public bool CURE(string[] items)
-    {
-        bool success = current_virus.CURE(items);
-
-        Debug.Log(success);
-
-        if (success)
-        {
-            Debug.Log("SUCCESS");
-            infected_population = current_virus.init_infection;
-            gameMgr.NextVirus();
-        }
-        return success;
     }
 }
