@@ -42,7 +42,7 @@ public class VirusManager : MonoBehaviour
         {
             current_virus = gameMgr.CurrentVirus;
             infected_population = current_virus.init_infection;
-            gameMgr.DisplaySpeechText(current_virus.speech_new_found);
+            gameMgr.DisplaySpeechTextNewVirus(current_virus.virus_name);
         }
         else
         {

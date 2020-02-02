@@ -12,11 +12,6 @@ public class Virus : MonoBehaviour
     public string[] cures;
     public string[] symptoms;
 
-    public string speech_new_found;
-    public string speech_cure_partly;
-    public string speech_cure_none;
-    public string speech_cure_complete;
-
     private float orig_dead_rate;
     private float orig_cure_rate;
     private float orig_infection_rate;
@@ -66,7 +61,7 @@ public class Virus : MonoBehaviour
             infection_rate = 1f;
             cure_rate = 1f;
 
-            //gameMgr.DisplaySpeechText(current_virus.speech_new_found);
+            gameMgr.DisplaySpeechTextCureStatus(CureStatus.Good);
 
             return true;
         }
@@ -80,12 +75,16 @@ public class Virus : MonoBehaviour
             Debug.Log("infection_rate: " + infection_rate);
             Debug.Log("dead_rate: " + dead_rate);
             Debug.Log("cure_rate: " + cure_rate);
+
+            gameMgr.DisplaySpeechTextCureStatus(CureStatus.Normal);
         }
         else if (correct_count == 0)
         {
             dead_rate = orig_dead_rate;
             cure_rate = orig_cure_rate;
             infection_rate = orig_infection_rate;
+
+            gameMgr.DisplaySpeechTextCureStatus(CureStatus.Bad);
         }
 
         return false;
